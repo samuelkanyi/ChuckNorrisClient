@@ -1,4 +1,33 @@
-.App {
-  font-family: sans-serif;
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Chilanka&display=swap");
+
+blockquote {
+  background: #f9f9f9;
+  border-left: 10px solid #ccc;
+  margin: 1.5em auto;
+  padding: 0.5em 10px;
+  quotes: "\201C""\201D""\2018""\2019";
+  width: 80%;
+}
+blockquote:before {
+  color: #ccc;
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+
+tbody tr:hover {
+  cursor: pointer;
+  background-color: #ffc0cb;
+}
+
+svg {
+  cursor: pointer;
+  transition: transform 1s ease-in-out;
+}
+
+svg:hover {
+  cursor: pointer;
+  transform: scale(1.2);
 }

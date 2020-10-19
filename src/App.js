@@ -1,18 +1,17 @@
 import React from "react";
 import "./styles.css";
-import { ApolloProvider, ApolloClient, InMemoryCache } from "@apollo/client";
+import "antd/dist/antd.css";
 
-const client = new ApolloClient({
-  uri: "",
-  cache: new InMemoryCache()
-});
+import { CategoryProvider } from "./state/CategoryState";
+import { SelectedCategoryProvider } from "./state/SelectedCategoryState";
+import Home from "./pages/Home";
 
-export default function App() {
+export default function App(props) {
   return (
-    <div className="App">
-      <ApolloProvider client={client}>
-        <h2>My first apollo app</h2>
-      </ApolloProvider>
-    </div>
+    <CategoryProvider>
+      <SelectedCategoryProvider>
+        <Home />
+      </SelectedCategoryProvider>
+    </CategoryProvider>
   );
 }
