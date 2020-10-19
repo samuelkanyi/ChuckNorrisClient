@@ -7,7 +7,7 @@ import MyLoader from "../components/loader/loader";
 
 export default function Home() {
   const { loading, error, data } = useContext(CategoriesContext);
-  if (loading) return <MyLoader active={true} text="INITIALIZING🚀🚀🚀" />;
+  if (loading) return <MyLoader active={true} />;
   if (error) return <h1>Error occured</h1>;
   return (
     <Div>
