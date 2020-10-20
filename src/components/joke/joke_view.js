@@ -5,9 +5,14 @@ import { Div, Paragraph } from "./joke.styled";
 import { RedoOutlined } from "@ant-design/icons";
 
 export default function JokeView(props) {
-  const { loading, error, data, changeCategory, selectedCategory } = useContext(
-    SelectedCategoryContext
-  );
+  const {
+    loading,
+    error,
+    data,
+    changeCategory,
+    selectedCategory,
+    refetch
+  } = useContext(SelectedCategoryContext);
 
   if (loading)
     return (
@@ -29,7 +34,7 @@ export default function JokeView(props) {
         <Paragraph>{data.joke.value}</Paragraph>
       </blockquote>
       <RedoOutlined
-        onClick={() => changeCategory(selectedCategory)}
+        onClick={() => refetch()}
         style={{
           fontSize: "40px",
           width: "100%",

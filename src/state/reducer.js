@@ -3,7 +3,6 @@ export default function reducer(state, action) {
     case "change_category":
       // console.log(state);
       return {
-        ...state,
         selectedCategory: action.payload
       };
 

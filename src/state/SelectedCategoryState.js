@@ -15,8 +15,9 @@ export const SelectedCategoryProvider = ({ children }) => {
   const changeCategory = (category) => {
     dispatch({ type: "change_category", payload: category });
   };
-  const { loading, error, data } = useQuery(RANDOM, {
-    variables: { category: state.selectedCategory }
+  const { loading, error, data, refetch } = useQuery(RANDOM, {
+    variables: { category: state.selectedCategory },
+    fetchPolicy: "cache-and-network"
   });
 
   return (
@@ -26,7 +27,8 @@ export const SelectedCategoryProvider = ({ children }) => {
         error,
         data,
         changeCategory,
-        selectedCategory: state.selectedCategory
+        selectedCategory: state.selectedCategory,
+        refetch
       }}
     >
       {children}

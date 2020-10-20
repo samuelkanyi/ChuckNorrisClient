@@ -7,7 +7,6 @@ export default function CategoryTable(props) {
   const data = props.data;
   const { changeCategory } = useContext(SelectedCategoryContext);
 
-  const categoryClicked = (category) => changeCategory(category);
   return (
     <Table>
       <thead>
@@ -18,7 +17,7 @@ export default function CategoryTable(props) {
 
       <tbody>
         {data.map((category) => (
-          <tr key={uuidv4()} onClick={() => categoryClicked(category)}>
+          <tr key={uuidv4()} onClick={() => changeCategory(category)}>
             <td>{category}</td>
           </tr>
         ))}
